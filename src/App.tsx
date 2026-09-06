@@ -1,19 +1,22 @@
 import { useState } from 'react'
-import type { Day, GroceryItem, MealType, WeekPlan } from './types'
+import type { Day, GroceryItem, MealType, UserProfile, WeekPlan } from './types'
 import { useLocalStorage } from './lib/useLocalStorage'
 import { emptyWeekPlan } from './lib/planGuide'
+import { defaultProfile } from './lib/profileGuide'
 import { Recetas } from './pages/Recetas'
 import { Semana } from './pages/Semana'
 import { ListaCompra } from './pages/ListaCompra'
 import { Gym } from './pages/Gym'
+import { Perfil } from './pages/Perfil'
 import './App.css'
 
-type Tab = 'recetas' | 'semana' | 'lista' | 'gym'
+type Tab = 'recetas' | 'semana' | 'lista' | 'gym' | 'perfil'
 
 function App() {
   const [tab, setTab] = useState<Tab>('recetas')
   const [groceryItems, setGroceryItems] = useLocalStorage<GroceryItem[]>('grocery', [])
   const [weekPlan, setWeekPlan] = useLocalStorage<WeekPlan>('week-plan', emptyWeekPlan())
+  const [profile, setProfile] = useLocalStorage<UserProfile>('profile', defaultProfile())
 
   function addToGrocery(items: GroceryItem[]) {
     setGroceryItems((prev) => [...prev, ...items])
@@ -38,6 +41,7 @@ function App() {
         {tab === 'semana' && <Semana plan={weekPlan} setPlan={setWeekPlan} />}
         {tab === 'lista' && <ListaCompra items={groceryItems} setItems={setGroceryItems} />}
         {tab === 'gym' && <Gym />}
+        {tab === 'perfil' && <Perfil profile={profile} setProfile={setProfile} />}
       </main>
       <nav className="tabbar">
         <button className={tab === 'recetas' ? 'active' : ''} onClick={() => setTab('recetas')}>
@@ -51,6 +55,9 @@ function App() {
         </button>
         <button className={tab === 'gym' ? 'active' : ''} onClick={() => setTab('gym')}>
           Gym
+        </button>
+        <button className={tab === 'perfil' ? 'active' : ''} onClick={() => setTab('perfil')}>
+          Perfil
         </button>
       </nav>
     </div>

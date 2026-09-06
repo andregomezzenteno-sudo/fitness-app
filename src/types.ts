@@ -53,10 +53,16 @@ export interface WorkoutDay {
   exercises: Exercise[]
 }
 
-export interface UserProfile {
+export interface WeightEntry {
+  id: string
+  date: string
   weightLb: number
+}
+
+export interface UserProfile {
   heightCm: number
   goal: string
+  weightLog: WeightEntry[]
 }
 
 export type Day = 'lunes' | 'martes' | 'miercoles' | 'jueves' | 'viernes' | 'sabado' | 'domingo'
