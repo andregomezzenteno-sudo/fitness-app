@@ -1,0 +1,320 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 12px;
+}
+
+.page {
+  padding: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.link-back {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 15px;
+  padding: 0 0 12px;
+  cursor: pointer;
+}
+
+.macros {
+  display: flex;
+  gap: 10px;
+  color: var(--text);
+  font-size: 14px;
+  margin: 4px 0 16px;
+}
+
+.macros.small {
+  margin: 2px 0 6px;
+  font-size: 13px;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+}
+
+.filter-row button {
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.filter-row button.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.section-gap {
+  margin-top: 24px;
+}
+
+.day-block {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.day-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.day-header h3 {
+  margin: 0;
+}
+
+.day-totals {
+  font-size: 12px;
+  color: var(--text);
+}
+
+.slot-row {
+  margin-top: 8px;
+}
+
+.slot-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+}
+
+.plan-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  font-size: 14px;
+  color: var(--text-h);
+}
+
+.empty-inline {
+  font-size: 13px;
+  color: var(--text);
+  margin: 6px 0 0;
+}
+
+.recipe-card {
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: var(--card-bg);
+  cursor: pointer;
+}
+
+.recipe-card-title {
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 4px;
+}
+
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 11px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-left: 8px;
+}
+
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.ingredient-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 15px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.add-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.add-row input {
+  flex: 1 1 160px;
+}
+
+.add-row input,
+.add-row select {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 14px;
+}
+
+.add-row .btn-primary {
+  width: auto;
+  flex: 1 1 100%;
+}
+
+.store-group h3 {
+  font-size: 15px;
+  color: var(--text-h);
+  margin: 18px 0 8px;
+}
+
+.grocery-list,
+.exercise-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grocery-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.exercise-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.link-video {
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+  padding-left: 32px;
+}
+
+.grocery-list li.checked label,
+.exercise-list li.checked .exercise-name {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.grocery-list label,
+.exercise-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.exercise-name {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.exercise-meta {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.link-danger {
+  background: none;
+  border: none;
+  color: #d33;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.empty {
+  color: var(--text);
+  font-size: 14px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.tabbar {
+  display: flex;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tabbar button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 12px 0;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.tabbar button.active {
+  color: var(--accent);
+  font-weight: 600;
+}
