@@ -12,18 +12,19 @@ export const dayLabel: Record<Day, string> = {
   domingo: 'Domingo',
 }
 
-export const mealTypes: MealType[] = ['desayuno', 'comida', 'snack']
+export const mealTypes: MealType[] = ['desayuno', 'comida', 'snack', 'cheat']
 
 export const mealTypeLabel: Record<MealType, string> = {
   desayuno: 'Desayuno',
   comida: 'Comida / Cena',
   snack: 'Snack',
+  cheat: 'Cheat meal',
 }
 
 export function emptyWeekPlan(): WeekPlan {
   const plan = {} as WeekPlan
   for (const d of days) {
-    plan[d] = { desayuno: [], comida: [], snack: [] }
+    plan[d] = { desayuno: [], comida: [], snack: [], cheat: [] }
   }
   return plan
 }

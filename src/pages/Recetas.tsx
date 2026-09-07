@@ -3,7 +3,7 @@ import type { Day, GroceryItem, MealType, Recipe } from '../types'
 import { seedRecipes } from '../data/seedRecipes'
 import { useLocalStorage, uid } from '../lib/useLocalStorage'
 import { storeLabel } from '../lib/storeGuide'
-import { recipeEmoji } from '../lib/recipeVisual'
+import { RecipeThumb } from '../components/RecipeThumb'
 import { days, dayLabel, mealTypes, mealTypeLabel } from '../lib/planGuide'
 
 type Filter = 'todas' | MealType
@@ -30,9 +30,8 @@ export function Recetas({
         <button className="link-back" onClick={() => setOpenId(null)}>
           ← Recetas
         </button>
-        <h2>
-          {recipeEmoji(open)} {open.name}
-        </h2>
+        <RecipeThumb recipe={open} size="header" />
+        <h2>{open.name}</h2>
         <div className="macros">
           <span>{open.kcal} kcal</span>
           <span>P {open.protein}g</span>
@@ -114,9 +113,8 @@ export function Recetas({
       <div className="card-list">
         {filtered.map((r) => (
           <button key={r.id} className="recipe-card" onClick={() => setOpenId(r.id)}>
-            <div className="recipe-card-title">
-              {recipeEmoji(r)} {r.name}
-            </div>
+            <RecipeThumb recipe={r} size="card" />
+            <div className="recipe-card-title">{r.name}</div>
             <div className="macros small">
               <span>{r.kcal} kcal</span>
               <span>P {r.protein}g</span>

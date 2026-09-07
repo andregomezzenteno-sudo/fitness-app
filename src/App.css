@@ -136,6 +136,46 @@
   cursor: pointer;
 }
 
+.recipe-thumb-card {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.recipe-thumb-emoji-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  font-size: 40px;
+  border-radius: 8px;
+  background: var(--accent-bg);
+  margin-bottom: 10px;
+}
+
+.recipe-thumb-header {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.recipe-thumb-emoji-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  font-size: 64px;
+  border-radius: 10px;
+  background: var(--accent-bg);
+  margin-bottom: 8px;
+}
+
 .recipe-card-title {
   font-weight: 600;
   color: var(--text-h);

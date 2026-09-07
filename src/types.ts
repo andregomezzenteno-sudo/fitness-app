@@ -8,7 +8,7 @@ export interface RecipeIngredient {
   store: StoreType
 }
 
-export type MealType = 'desayuno' | 'comida' | 'snack'
+export type MealType = 'desayuno' | 'comida' | 'snack' | 'cheat'
 
 export interface Recipe {
   id: string

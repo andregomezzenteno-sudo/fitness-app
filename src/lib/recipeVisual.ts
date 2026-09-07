@@ -1,8 +1,24 @@
 import type { Recipe } from '../types'
 
+const DIACRITICS = new RegExp('[̀-ͯ]', 'g')
+
+export function slugify(text: string): string {
+  return text
+    .normalize('NFD')
+    .replace(DIACRITICS, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+export function recipeImagePath(recipe: Recipe): string {
+  return `/recetas/${slugify(recipe.name)}.jpg`
+}
+
 export function recipeEmoji(recipe: Recipe): string {
   const text = (recipe.name + ' ' + recipe.tags.join(' ')).toLowerCase()
   if (recipe.mealType === 'snack') return '🥤'
+  if (recipe.mealType === 'cheat') return '🍔'
   if (recipe.mealType === 'desayuno') {
     if (text.includes('avena') || text.includes('porridge')) return '🥣'
     if (text.includes('yogur') || text.includes('skyr')) return '🥛'
